@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Formulário com validações</title>
+</head>
+
+<body>
+    <form id="form" onsubmit="event.preventDefault(); resetForm()">
+        <h1>Localização</h1>
+
+        <div class="form-group" error-message="Insira um CEP válido">
+            <label for="cep">CEP:</label>
+            <input class="input" type="text" id="cep" maxlength="9" onblur="onCepBlurHandler(event)"
+                oninput="allowOnlyNumbers(this)">
+        </div>
+
+        <div class="form-group" error-message="Informe sua rua">
+            <label for="rua">Rua:</label>
+            <input class="input" type="text" id="rua">
+        </div>
+
+        <div class=" form-group" error-message="Informe seu bairro">
+            <label for="bairro">Bairro:</label>
+            <input class="input" type="text" id="bairro">
+        </div>
+
+        <div class=" row">
+            <div class="form-group" error-message="Informe sua cidade">
+                <label for="cidade">Cidade:</label>
+                <input class="input" type="text" id="cidade">
+            </div>
+
+            <div class=" form-group" error-message="Informe seu UF">
+                <label for="uf">UF:</label>
+                <input class="input small" type="text" id="uf" maxlength=" 2">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group" error-message="Informe seu IBGE">
+                <label for="ibge">IBGE:</label>
+                <input class="input" type="text" id="ibge">
+            </div>
+
+            <div class=" form-group" error-message="Informe seu DDD">
+                <label for="ddd">DDD:</label>
+                <input class="input small" type="text" id="ddd" maxlength=" 2">
+            </div>
+        </div>
+
+        <button id="submit-button" type="submit" class="button" disabled><strong>Cadastrar</strong></button>
+    </form>
+
+    <script type="text/javascript" src="./scripts.js"></script>
+</body>
+
+</html>
